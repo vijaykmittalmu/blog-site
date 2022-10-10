@@ -1,0 +1,23 @@
+.btnTransparent {
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+}
+
+.outline {
+    background: $white;
+    @include borderCls($isBorder: true, $borderColor: $primary);
+    font-size: 17px;
+    text-transform: capitalize;
+    @include paddings(0,15,0,15);
+    cursor: pointer;
+    color: $primary;
+    &:hover {
+        background-color: $primary;
+        color: $white;
+    }
+}
+
+.btnAlignment {
+    @include displayFlex($aligItems: center)
+}

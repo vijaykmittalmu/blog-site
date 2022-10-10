@@ -1,0 +1,22 @@
+@mixin displayFlex($justifyContent: null, $aligItems: null, $flexDirection: null) {
+    display: flex;
+    justify-content: $justifyContent;
+    align-items: $aligItems;
+    flex-direction: $flexDirection;
+}
+
+@mixin margins($top:0, $right:0, $bottom:0, $left:0) {
+    margin: $top $right $bottom $left;
+}
+
+@mixin paddings($top:0, $right:0, $bottom:0, $left:0) {
+    padding: #{$top}+px #{$right}+px #{$bottom}+px #{$left}+px;
+}
+
+@mixin borderCls($isBorder: false, $borderProperty:border,$borderVal:1, $borderStyle: solid, $borderColor: $light-gray) {
+    @if $isBorder == false {
+        #{$borderProperty}: 0;
+    }@else {
+        #{$borderProperty}: #{$borderVal}+px $borderStyle $borderColor;
+    }
+}

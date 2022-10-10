@@ -1,0 +1,47 @@
+.header-container {
+    width: 100%;
+
+    @at-root {
+        .padding-0 {
+            @include paddings(15, 10, 15, 10);
+        }
+
+        .border-bottom {
+            @include borderCls($isBorder: true, $borderProperty: border-bottom)
+        }
+
+        .inline-container {
+            @include displayFlex($justifyContent:space-between);
+        }
+
+        .inline-wrapper {
+            @extend .inline-container;
+            width: 22%;
+        }
+
+        .inline-auth-section {
+            @extend .inline-container;
+            border-radius: 5px;
+            &:focus-within {
+                @include borderCls($isBorder: true, $borderColor: $primary);
+            }
+        }
+
+        .title {
+            p {
+                @include margins;
+                font-size: #{$titleFontSize} + px;
+                font-weight:500;
+            }
+        }
+        .search {
+            background: $white;
+            @include borderCls($isBorder: true);
+        }
+
+        .navigations {
+            @include paddings(15,0,15,0);
+            @include displayFlex($justifyContent:center);
+        }
+    } 
+}
